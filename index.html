@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f1f1f1;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(51, 51, 51, 0.8); /* initial solid bg with transparency */
+      color: #fff;
+      padding: 20px 20px;
+      transition: background-color 0.3s ease, padding 0.3s ease;
+      position: fixed; /* Make navbar stick at the top */
+      top: 0; /* Ensure it's aligned to the top */
+      left: 0; /* Align to the left */
+      right: 0; /* Align to the right */
+      width: 100%; /* Full width */
+      z-index: 1000; /* Ensure it's on top of other content */
+    }
+
+    .navbar.scrolled {
+      background-color: #333; /* solid color when scrolled */
+      padding: 10px 20px; /* reduced padding on scroll */
+    }
+
+    .navbar a {
+      color: #b0b0b0;
+      text-decoration: none;
+      padding: 12px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+
+    .logo img, .profile-pic img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .navbar .left, .navbar .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .left a {
+      margin-right: 20px;
+    }
+
+    .navbar .right a {
+      margin-left: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      color: #b0b0b0;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: white;
+      background-color: #575757;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Content Layout */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto; /* Center the container */
+    }
+
+    .row {
+      display: flex;
+      margin-top: 120px; /* Space to avoid content overlap */
+      justify-content: space-between;
+    }
+
+    .leftcolumn {
+      width: 75%;
+    }
+
+    .rightcolumn {
+      width: 25%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="navbar" id="navbar">
+    <div class="left">
+      <a href="#">Home</a>
+      <a href="#">Videos</a>
+      <a href="#">Store</a>
+      <a href="#">Downloads</a>
+    </div>
+    <div class="right">
+      <a href="#" class="profile-pic">Profile</a>
+    </div>
+  </div>
+
+  <!-- Blog Content -->
+  <div class="container">
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>First Shirt Design!</h2>
+          <h5>My first shirt design!</h5>
+          <div style="height:200px;"><img src="lanceFirstShirtDesign.png" style="height:200px; width:300px;"></div>
+          <p>Went for a cartoonish with a realistic background with quoates.</p>
+          <p>Very cool!</p>
+        </div>
+        <div class="card">
+          <h2>I am hungry</h2>
+          <h5>please give me food.</h5>
+          <div style="height:200px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzOP-cueRQS4KY5i99CIglCf0sZVwY7iORYQ&s" style="height:200px; width:300px;"></div>
+          <p>i want food im so hungry please give me nom noms</p>
+          <p>so hngry to the point that im eating my pillows help</p>
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <div style="height:100px;"><img src="https://cdn.pixabay.com/photo/2021/05/22/22/35/black-hole-6274731_640.jpg" style="height: 100px; width: 200px;"></div>
+          <p>my stomach is a black hole</p>
+        </div>
+        <div class="card">
+          <h3>Popular Post</h3>
+          skibidi toilet yes yes 
+        </div>
+        <div class="card">
+          <h3>erm</h3>
+          <p>developing soon! (i suck at coding especially functions)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <h2>Xquenic! &copy;</h2>
+  </div>
+
+  <script>
+    // Change navbar style on scroll
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      var navbar = document.getElementById("navbar");
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
